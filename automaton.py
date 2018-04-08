@@ -1,14 +1,21 @@
 def generate(n, rule):
-    automata = []
+    automaton = []
     user_rule_arr = [] # [rule[0], rule[1] ...etc] --> e.g: [1,0,1,0,1,0] if say rule was 101010
 
     for j in rule: #Appends each digit of the rule to an array #THIS IS WHAT DOESNT FKING WORK
-        user_rule_arr.append(int(j)) #Appends each digit of rule to an array, which becomes the first element of automata multi-dimensional array
+        user_rule_arr.append(int(j)) #Appends each digit of rule to an array, which becomes the first element of automaton multi-dimensional array
     #LOOP ABOVE WAS CAUSING ME PROBLEMS - SIMPLE ERROR WAS I USED i variable instead of j
-    automata.append([0,0,0,0,1,0,0,0,0]) #Automata array holds its first element, the first generation
-    for k in range(0, n-1): #Loop that creates each generation, appending them to automata
-        current = automata[k]
-        new = []
+    automaton.append([0,0,0,0,1,0,0,0,0]) #Automata array holds its first element, the first generation
+    string = ""
+    for cell in automaton[0]:
+        if cell == 1:
+            string += "  *  "
+        else:
+            string += "     "
+    print(string)
+    for k in range(0, n-1): #Loop that creates each generation, appending them to automaton
+        current = automaton[k]
+        new_gen = []
 
         for l in range(0, 9): #loop that considers each neighbourhood and generates the next current
             mid = current[l]
@@ -38,18 +45,17 @@ def generate(n, rule):
                 new_num = user_rule_arr[6]
             else:
                 new_num = user_rule_arr[7]
-            new.append(new_num)
+            new_gen.append(new_num)
         string = ""
 
-        for m in new:
+        for m in new_gen:
             if m == 1:
                 string += "  *  "
             else:
                 string += "     "
         print(string)
 
-        automata.append(new)
-    #print(automata)
+        automaton.append(new_gen)
 while True:
     try:
         num_gens = int(input("Please enter a number of generations:\n"))
