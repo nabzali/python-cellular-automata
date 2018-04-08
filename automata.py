@@ -3,8 +3,8 @@ def generate(n, rule):
     user_rule_arr = [] # [rule[0], rule[1] ...etc] --> e.g: [1,0,1,0,1,0] if say rule was 101010
 
     for j in rule: #Appends each digit of the rule to an array #THIS IS WHAT DOESNT FKING WORK
-        user_rule_arr.append(int(i)) #Appends each digit of rule to an array, which becomes the first element of automata multi-dimensional array
-    print(user.rule_arr)
+        user_rule_arr.append(int(j)) #Appends each digit of rule to an array, which becomes the first element of automata multi-dimensional array
+    #LOOP ABOVE WAS CAUSING ME PROBLEMS - SIMPLE ERROR WAS I USED i variable instead of j
     automata.append([0,0,0,0,1,0,0,0,0]) #Automata array holds its first element, the first generation
     for k in range(0, n-1): #Loop that creates each generation, appending them to automata
         current = automata[k]
@@ -22,7 +22,6 @@ def generate(n, rule):
                 left = current[l-1]
                 right = current[l+1]
             index = str(left)+str(mid)+str(right)
-            print(index)
             if index == "000":
                 new_num = user_rule_arr[0]
             elif index == "001":
