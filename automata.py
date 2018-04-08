@@ -61,25 +61,22 @@ while True:
         else:
             break
     except ValueError:
-        print("This must be an integer (not larger than 10). Try Again.")
+        print("This must be an integer (not larger than 100). Try Again.")
 
 
 while True:  # Error checking for input of rule (8 bit integer)
-    try:
-        user_rule = str(input("Please enter a rule:\n"))
-        isBinary = True
-        for i in str(user_rule):
-            if i not in ["0", "1"]:
-                print("You must enter a binary number. Try again.")
-                isBinary = False
-                break
-        if not isBinary:
-            continue
-        if len(str(user_rule)) != 8:
-            print("Rule must be 8 digits long (one byte).")
-            continue
-        break
-    except ValueError:
-        print("You must enter a number (must also be binary). Try again.")
+    user_rule = str(input("Please enter a rule:\n"))
+    isBinary = True
+    for i in user_rule:
+        if i not in ["0", "1"]:
+            print("You must enter a binary number. Try again.")
+            isBinary = False
+            break
+    if not isBinary:
+        continue
+    if len(user_rule) != 8:
+        print("Rule must be 8 digits long (one byte).")
+        continue
+    break
 
 generate(num_gens, user_rule)
