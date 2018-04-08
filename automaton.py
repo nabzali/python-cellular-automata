@@ -56,6 +56,11 @@ def generate(n, rule):
         print(string)
 
         automaton.append(new_gen)
+
+f = open("rules.txt", "r")
+text = f.read()
+print(text)
+f.close()
 while True:
     try:
         num_gens = int(input("Please enter a number of generations:\n"))
@@ -68,7 +73,6 @@ while True:
             break
     except ValueError:
         print("This must be an integer (not larger than 100). Try Again.")
-
 
 while True:  # Error checking for input of rule (8 bit integer)
     user_rule = str(input("Please enter a rule:\n"))

@@ -1,0 +1,7 @@
+ELEMENTARY CELLULAR AUTOMATON BY NABEEL ALI (2018)
+Rules and Warnings:
+- Number of rows (generations) entered must lie within the range of 1 and 100 inclusive
+- The rule entered must be an 8-bit binary number, e.g: 00101110
+- Users are prompted to re-enter an input in the case of invalid entry
+- By default, the first generation has all bits turned off apart from the very middle bit
+- Finally, enjoy experimenting with this project!
