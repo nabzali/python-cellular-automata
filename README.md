@@ -1,2 +1,2 @@
-# python-cellular-automata
-Elementary Cellular Automata in Python by Nabeel Ali
+# Python Cellular Automaton
+Elementary Cellular Automaton in Python by Nabeel Ali
