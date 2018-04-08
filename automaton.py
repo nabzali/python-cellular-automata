@@ -59,13 +59,13 @@ def generate(n, rule):
 
 f = open("rules.txt", "r")
 text = f.read()
-print(text)
+print(text+"\n")
 f.close()
 while True:
     try:
         num_gens = int(input("Please enter a number of generations:\n"))
         if num_gens > 100:
-            print("You have entered a number greater than 10. Try again.")
+            print("You have entered a number greater than 100. Try again.")
             continue
         elif num_gens < 1:
             print("You have entered a number lower than 1. Try again.")
@@ -85,7 +85,7 @@ while True:  # Error checking for input of rule (8 bit integer)
     if not isBinary:
         continue
     if len(user_rule) != 8:
-        print("Rule must be 8 digits long (one byte).")
+        print("Rule must be 8 bits long. Try again.")
         continue
     break
 
