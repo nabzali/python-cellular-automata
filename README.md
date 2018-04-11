@@ -1,5 +1,5 @@
-# Python Cellular Automaton
-Elementary Cellular Automaton in Python by Nabeel Ali
+# Python Elementary Cellular Automaton
+[Elementary Cellular Automaton](http://natureofcode.com/book/chapter-7-cellular-automata/) in Python by Nabeel Ali
 
 Involved in this project:
 -
